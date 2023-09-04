@@ -1,4 +1,6 @@
-package app.drinks;
+package app.coffeemaker;
+
+import app.drinks.Drink;
 
 public class CoffeeMaker {
     private Drink drink;
