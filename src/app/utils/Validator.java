@@ -2,28 +2,26 @@ package app.utils;
 
 import java.util.Scanner;
 
-public class OptionValidator {
+public class Validator {
     public static int validateOptionInput(Scanner scanner) {
 
         int[] options = {0, 1, 2, 3};
 
         while (!scanner.hasNextInt()) {
-            String str = scanner.nextLine().trim();
-            System.out.printf("There is no such option! Try again: ");
+            System.out.println("Not a number");
         }
-
         int inputData = scanner.nextInt();
 
         while (!contains(options, inputData)) {
-            System.out.println("There is no such option! Try again: ");
+            System.out.println("There is no such option! Enter a number option 1,2,3 or 0!");
             while (!scanner.hasNextInt()) {
-                String str = scanner.next().trim();
-                System.out.printf("\"%s\" - not a number!%nTry again: ");
+                System.out.println("Not a number");
             }
             inputData = scanner.nextInt();
         }
         return inputData;
     }
+
     public static boolean contains(final int[] array, final int value) {
         boolean result = false;
         for (int i : array) {
