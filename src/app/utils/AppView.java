@@ -3,12 +3,9 @@ package app.utils;
 import java.util.Scanner;
 
 public class AppView {
-    Scanner scanner;
 
-    public int chooseOption() {
-
-        scanner = new Scanner(System.in);
-
+    public static int chooseOption() {
+        Scanner scanner = new Scanner(System.in);
         System.out.print("""
                 --------------------------
                 Choose a drink to prepare:
@@ -18,6 +15,6 @@ public class AppView {
                 0 - Exit
                 """);
 
-        return OptionValidator.validateOptionInput(scanner);
+        return Validator.validateOptionInput(scanner);
     }
 }
